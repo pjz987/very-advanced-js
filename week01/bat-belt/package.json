@@ -4,7 +4,8 @@
   "description": "Before ES5 and ES6 added such useful features like map, filter, spreading, etc. many developers used a library called [underscore.js](https://underscorejs.org/). Underscore provided many general utility functions to make working with javascript easier.",
   "main": "index.js",
   "scripts": {
-    "test": "riteway -r esm test/test.js | tap-nirvana"
+    "test": "riteway -r esm test/test.js | tap-nirvana",
+    "robin": "riteway -r esm test/test-robin.js | tap-nirvana"
   },
   "author": "Evan Hackett",
   "license": "ISC",
