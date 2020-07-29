@@ -26,28 +26,19 @@ var welcome = _.compose(greet, exclaim);
 console.log(welcome('moe'));
 
 _.once = (func) => {
+    
+    var onceFunc = (func) => {
+        return func
 
-    var onceFunc = (used=false) => {
-        if (!used) {
-            func(arg)
-            // var twiceFunc = (arg, used=true) => {
-            //     if (!used) {
-            //         func(arg)
-            //     }
-            // }
-            // return twiceFunc
-            
-        }
-        // used = true
     }
-    let outFunc = onceFunc(true)
-    return outFunc
+    return onceFunc
 }
 
-var sayHi = _.once(() => console.log('hi'))
+var plus10 = _.once((x) => x + 10)
 
-sayHi();
-sayHi();
+console.log(plus10(10));
+console.log(plus10(11));
+console.log(plus10(12));
 
 
 _.debounce = (func, wait) => {

@@ -56,5 +56,44 @@ _.range = (start, stop, step=1) => {
   return array
 }
 
+_.extend = (destination, ...sources) => {
+  for (let obj of sources) {
+    Object.assign(destination, obj)
+  }
+  return destination
+}
+
+// console.log(_.extend({name: 'moe'}, {age: 50}, {job: 'bar'}))
+// // {name: 'moe', age: 50, job: 'bar}
+// console.log(_.extend({}))
+// {}
+
+
+_.times = (n, iteratee) => {
+  let array = []
+  for (let i=0; i<n; i++) {
+    array.push(iteratee(i))
+  }
+  return array
+}
+
+// console.log(_.times(3, x => 'hey'))
+// [ 'hey', 'hey', 'hey' ]
+
+_.constant = (value) => {
+  return () => value
+}
+
+// console.log(_.constant)
+// var stooge = {name: 'moe'};
+// console.log(stooge === _.constant(stooge)());
+
+_.delay = (func, wait, ...args) => {
+  // console.log(arguments, 'line36')
+  for (let arg of args) {
+    setTimeout(func, wait, arg)
+
+  }
+}
 
 export default _

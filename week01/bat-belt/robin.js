@@ -7,9 +7,9 @@ _.extend = (destination, ...sources) => {
   return destination
 }
 
-console.log(_.extend({name: 'moe'}, {age: 50}, {job: 'bar'}))
-// {name: 'moe', age: 50, job: 'bar}
-console.log(_.extend({}))
+// console.log(_.extend({name: 'moe'}, {age: 50}, {job: 'bar'}))
+// // {name: 'moe', age: 50, job: 'bar}
+// console.log(_.extend({}))
 // {}
 
 
@@ -21,7 +21,7 @@ _.times = (n, iteratee) => {
   return array
 }
 
-console.log(_.times(3, x => 'hey'))
+// console.log(_.times(3, x => 'hey'))
 // [ 'hey', 'hey', 'hey' ]
 
 _.constant = (value) => {
@@ -29,8 +29,8 @@ _.constant = (value) => {
 }
 
 // console.log(_.constant)
-var stooge = {name: 'moe'};
-console.log(stooge === _.constant(stooge)());
+// var stooge = {name: 'moe'};
+// console.log(stooge === _.constant(stooge)());
 
 _.delay = (func, wait, ...arguments) => {
   // console.log(arguments, 'line36')
