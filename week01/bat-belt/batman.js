@@ -20,20 +20,31 @@ _.compose = (f, g) => {
     }
 }
 
+/* test
+
 var greet    = function(name){ return "hi: " + name; };
 var exclaim  = function(statement){ return statement.toUpperCase() + "!"; };
 var welcome = _.compose(greet, exclaim);
 console.log(welcome('moe'));
 
-_.once = (func) => {
-    
-    var onceFunc = (func) => {
-        return func
+*/
 
+_.once = (fn) => {
+    let firstTime = true
+    let firstVal
+    return function(...args) {
+        if (firstTime) {
+            firstVal = fn(...args)
+            firstTime = false
+        }
+        return firstVal
     }
-    return onceFunc
+    // if (!doneOnce) {
+    //     let firstFunc = func()
+    // } 
+    // var doneOnce = true
+    // return func
 }
-
 var plus10 = _.once((x) => x + 10)
 
 console.log(plus10(10));
@@ -53,6 +64,8 @@ _.debounce = (func, wait) => {
     return debouncedFunc
 }
 
+/* test
+
 sayHey5 = _.debounce(() => console.log('hey'), 5000)
 
 setTimeout(sayHey5, 3000)
@@ -60,3 +73,5 @@ setTimeout(sayHey5, 4000)
 setTimeout(sayHey5, 5000)
 setTimeout(sayHey5, 6000)
 setTimeout(sayHey5, 7000)
+
+*/
