@@ -1,21 +1,21 @@
 const renderList = require('./render-list')
 
-function add (todo, list) {
-  list.push({
+function add (todo, data) {
+  data.list.push({
     text: todo,
     completed: false
   })
-  renderList(list)
+  renderList(data)
 }
 
-function complete (i, list) {
-  list[i].completed = true
-  renderList(list)
+function complete (i, data) {
+  data.list[i].completed = true
+  renderList(data)
 }
 
-function remove (i, list) {
-  list.splice(i)
-  renderList(list)
+function remove (i, data) {
+  data.list.splice(i, 1)
+  renderList(data)
 }
 
 module.exports = {
