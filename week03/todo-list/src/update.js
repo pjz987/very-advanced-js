@@ -1,4 +1,5 @@
 const renderList = require('./render-list')
+// const browserify = require('browserify')
 
 function add (todo, data) {
   data.list.push({

@@ -5,6 +5,7 @@
   "main": "bundle.js",
   "dependencies": {
     "browserify": "^16.5.2",
+    "express": "^4.17.1",
     "watchify": "^3.11.1"
   },
   "devDependencies": {},
